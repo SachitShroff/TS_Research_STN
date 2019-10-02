@@ -4,6 +4,8 @@ import keras.backend as K
 from conv_model import conv_model_no_color_adjust
 
 
+DATA_DIR = "sign_data/"
+
 def load_gtsrb(n_channel=3, train_file_name=None):
     """
     Load GTSRB data as a (datasize) x (channels) x (height) x (width) numpy
@@ -79,9 +81,9 @@ def get_patch(X, pos):
         X_cropped[i] = np.copy(x[top:bot, left:right, :])
     return X_cropped
 
-
+"""
 model = conv_model_no_color_adjust()
-model.load_weights("./keras_weights/stn_v5.hdf5")
+model.load_weights("stn_v5.hdf5")
 
 get_stn_output = K.function([model.layers[0].input, K.learning_phase()],
                             [model.layers[1].output])
@@ -100,3 +102,4 @@ S = get_patch(X_stn, pos_S)
 T = get_patch(X_stn, pos_T)
 O = get_patch(X_stn, pos_O)
 P = get_patch(X_stn, pos_P)
+"""

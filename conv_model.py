@@ -11,7 +11,7 @@ from keras.optimizers import Adam
 from keras.regularizers import l2
 from keras.utils import np_utils
 
-from stn.spatial_transformer import SpatialTransformer
+from spatial_transformer import SpatialTransformer
 
 
 def locnet():
